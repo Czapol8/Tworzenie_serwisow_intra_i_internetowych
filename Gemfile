@@ -13,10 +13,12 @@ gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 
-gem 'bcrypt', '~> 3.1.11'
+gem 'will_paginate', '~> 3.1.0'
+gem 'will_paginate-bootstrap4'
+
+gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', require: 'bcrypt' if Gem.win_platform?
 gem 'bootstrap-sass'
 gem 'jquery-rails'
-gem 'bootstrap', '~> 4.0.0.beta3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/codahale/bcrypt-ruby.git
+  revision: f2db689ba567d1a018f4dacb1ccf909adc93e887
+  specs:
+    bcrypt (3.1.11)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -43,12 +49,7 @@ GEM
     arel (8.0.0)
     autoprefixer-rails (7.2.5)
       execjs
-    bcrypt (3.1.11-x86-mingw32)
     bindex (0.5.0)
-    bootstrap (4.0.0.beta3)
-      autoprefixer-rails (>= 6.0.3)
-      popper_js (>= 1.12.3, < 2)
-      sass (>= 3.5.2)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -99,7 +100,6 @@ GEM
     nio4r (2.1.0)
     nokogiri (1.8.1-x86-mingw32)
       mini_portile2 (~> 2.3.0)
-    popper_js (1.12.9)
     public_suffix (3.0.1)
     puma (3.11.0)
     rack (2.0.3)
@@ -175,6 +175,9 @@ GEM
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
+    will_paginate (3.1.6)
+    will_paginate-bootstrap4 (0.2.2)
+      will_paginate (~> 3.0, >= 3.0.0)
     xpath (2.1.0)
       nokogiri (~> 1.3)
 
@@ -182,8 +185,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  bcrypt (~> 3.1.11)
-  bootstrap (~> 4.0.0.beta3)
+  bcrypt!
   bootstrap-sass
   byebug
   capybara (~> 2.13)
@@ -199,6 +201,8 @@ DEPENDENCIES
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
+  will_paginate (~> 3.1.0)
+  will_paginate-bootstrap4
 
 BUNDLED WITH
    1.15.3
