@@ -20,7 +20,7 @@ gem 'd3-rails'
 gem 'plotlyjs-rails'
 gem 'threejs-rails'
 # Hash mechanism for passwords
-gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', require: 'bcrypt' if Gem.win_platform?
+gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git'
 # Bootstrap
 gem 'bootstrap-sass'
 # JQuery
