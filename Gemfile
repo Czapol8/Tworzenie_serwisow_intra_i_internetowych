@@ -12,12 +12,18 @@ gem 'rails', '~> 5.1.4'
 gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
-
+# Pagination
 gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-bootstrap4'
-
+# Plot libraries
+gem 'd3-rails'
+gem 'plotlyjs-rails'
+gem 'threejs-rails'
+# Hash mechanism for passwords
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', require: 'bcrypt' if Gem.win_platform?
+# Bootstrap
 gem 'bootstrap-sass'
+# JQuery
 gem 'jquery-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
