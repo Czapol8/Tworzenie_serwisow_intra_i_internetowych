@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @datafile.name %>
+</p>
+
+<p>
+  <strong>Filen:</strong>
+  <%= image_tag(@datafile.filen) %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @datafile.user %>
+</p>
+
+<%= link_to 'Edit', edit_datafile_path(@datafile) %> |
+<%= link_to 'Back', datafiles_path %>

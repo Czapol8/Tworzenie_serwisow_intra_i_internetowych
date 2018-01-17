@@ -25,6 +25,9 @@ gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git'
 gem 'bootstrap-sass'
 # JQuery
 gem 'jquery-rails'
+
+gem 'carrierwave'
+gem 'fog'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
