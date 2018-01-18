@@ -1,0 +1,17 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,Latency,IdleTime,Connect
+1516052390649,990,HTTP Request,200,OK,Login 1-1,text,true,,176539,232,1,1,125,0,79
+1516052391641,555,HTTP Request Login,200,OK,Login 1-1,text,true,,35828,347,2,2,276,0,240
+1516052391649,908,HTTP Request,200,OK,Login 1-2,text,true,,176593,232,1,1,97,0,51
+1516052392558,555,HTTP Request Login,200,OK,Login 1-2,text,true,,35820,339,2,2,281,0,236
+1516052392651,919,HTTP Request,200,OK,Login 1-3,text,true,,176507,232,1,1,100,0,57
+1516052393571,523,HTTP Request Login,200,OK,Login 1-3,text,true,,35812,339,2,2,262,0,226
+1516052393651,907,HTTP Request,200,OK,Login 1-4,text,true,,176648,232,1,1,110,0,57
+1516052394558,409,HTTP Request Login,429,Too Many Requests,Login 1-4,text,false,,2735,339,2,2,264,0,228
+1516052394650,478,HTTP Request,429,Too Many Requests,Login 1-5,text,false,,2730,232,1,1,101,0,58
+1516052395128,422,HTTP Request Login,429,Too Many Requests,Login 1-5,text,false,,2735,339,1,1,274,0,239
+1516052395650,483,HTTP Request,429,Too Many Requests,Login 1-6,text,false,,2730,232,1,1,93,0,50
+1516052396134,436,HTTP Request Login,429,Too Many Requests,Login 1-6,text,false,,2735,339,1,1,282,0,244
+1516052396651,490,HTTP Request,429,Too Many Requests,Login 1-7,text,false,,2730,232,1,1,106,0,50
+1516052397141,429,HTTP Request Login,429,Too Many Requests,Login 1-7,text,false,,2735,339,1,1,268,0,232
+1516052397652,502,HTTP Request,429,Too Many Requests,Login 1-8,text,false,,2730,232,1,1,97,0,49
+1516052398155,426,HTTP Request Login,429,Too Many Requests,Login 1-8,text,false,,2735,339,1,1,273,0,236
