@@ -17,7 +17,7 @@
       <tr>
         <td><%= datafile.name %></td>
         <td><%= datafile.filen %></td>
-        <td><%= datafile.user %></td>
+        <td><%= datafile.user.username %></td>
         <td><%= link_to 'Show', datafile %></td>
         <td><%= link_to 'Edit', edit_datafile_path(datafile) %></td>
         <td><%= link_to 'Destroy', datafile, method: :delete, data: { confirm: 'Are you sure?' } %></td>

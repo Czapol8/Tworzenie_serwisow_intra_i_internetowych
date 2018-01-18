@@ -7,12 +7,12 @@
 
 <p>
   <strong>Filen:</strong>
-  <%= image_tag(@datafile.filen) %>
+  <%= @datafile.filen %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @datafile.user %>
+  <%= @datafile.user.username %>
 </p>
 
 <%= link_to 'Edit', edit_datafile_path(@datafile) %> |

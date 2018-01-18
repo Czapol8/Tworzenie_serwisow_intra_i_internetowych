@@ -1,4 +1,4 @@
 class Datafile < ApplicationRecord
   belongs_to :user
-  mount_uploader :datafile, DatafileUploader
+  mount_uploader :filen, DatafileUploader
 end
