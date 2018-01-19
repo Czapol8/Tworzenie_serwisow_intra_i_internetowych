@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
 
-  get 'graph/index'
-  get 'graph/data', :defaults => { :format => 'json' }
+  # get 'graph/index', to: 'graph#index'
+  # get 'graph/data', :defaults => { :format => 'json' }
+  get 'datafiles/:id/data', to: 'datafiles#data', as: 'get_data', :defaults => { :format => 'json' }
 end

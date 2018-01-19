@@ -1,5 +1,5 @@
 class DatafilesController < ApplicationController
-  before_action :set_datafile, only: [:show, :edit, :update, :destroy]
+  before_action :set_datafile, only: [:show, :edit, :update, :destroy, :data]
 
   # GET /datafiles
   # GET /datafiles.json
@@ -10,6 +10,14 @@ class DatafilesController < ApplicationController
   # GET /datafiles/1
   # GET /datafiles/1.json
   def show
+  end
+
+  def data
+    respond_to do |format|
+      format.json {
+        render :json => @datafile.filen.to_json
+      }
+    end
   end
 
   # GET /datafiles/new
