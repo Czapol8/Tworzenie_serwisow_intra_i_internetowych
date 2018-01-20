@@ -14,13 +14,11 @@
   <strong>User:</strong>
   <%= @datafile.user.username %>
 </p>
+
+<div align="center" id="visualization"></div>
 <svg id="graph"></svg>
-
-<%= javascript_tag "console.log('All is good')" %>
-
 <%= link_to 'Edit', edit_datafile_path(@datafile) %> |
 <%= link_to 'Back', datafiles_path %>
-
 
 <script>
     $(document).on('turbolinks:load', function() {
@@ -33,7 +31,9 @@
                 console.log(data);
                 d3.csv(data.url, function(data) {
                     console.log(data);
+                    visF();
                 });
+
                 //draw(data);
             },
             error: function (result) {
@@ -84,4 +84,35 @@
         console.log("error")
     }
 
+
+    function visF() {
+
+        var data = new vis.DataSet();
+        // sin/cos
+        var counter = 0;
+        var steps = 50;
+        var axisMax = 314;
+        var axisStep = axisMax / steps;
+        for (var x = 0; x < axisMax; x+=axisStep) {
+            for (var y = 0; y < axisMax; y+=axisStep) {
+                var value = (Math.sin(x/50) * Math.cos(y/50) * 50 + 50);
+                data.add({id:counter++,x:x,y:y,z:value,style:value});
+            }
+        }
+
+        var options = {
+            width:  '800px',
+            height: '800px',
+            style: 'surface',
+            showPerspective: true,
+            showGrid: true,
+            showShadow: false,
+            keepAspectRatio: true,
+            verticalRatio: 0.5
+        };
+
+        // Instantiate our graph object.
+        var container = document.getElementById('visualization');
+        var graph3d = new vis.Graph3d(container, data, options);
+    }
 </script>
