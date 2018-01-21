@@ -52,14 +52,18 @@
             mode: 'markers',
             marker: {
                 size: 12,
+                symbol: 'circle',
                 line: {
-                    color: 'rgba(217, 217, 217, 0.14)',
-                    width: 0.5},
+                    color: unpack(rows, 'value'),
+                    width: 2,
+                    colorscale: 'true'},
                 opacity: 0.8},
+            showlegend: 'false',
+            showscale: 'true',
             type: 'scatter3d'
         };
 
-        var data = [trace1];//, trace2];
+        var data = [trace1];
         var layout = {margin: {
                 l: 0,
                 r: 0,
