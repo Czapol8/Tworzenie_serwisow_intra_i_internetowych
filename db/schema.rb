@@ -20,13 +20,6 @@ ActiveRecord::Schema.define(version: 20180116201757) do
     t.integer "user_id"
   end
 
-  create_table "articles_fixes", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "datafiles", force: :cascade do |t|
     t.string "name"
     t.string "filen"
