@@ -15,7 +15,7 @@ $navbar-default-bg: black;
 }
 
 #logo:hover {
-  color: #fff;
+  color: pink;
   text-decoration: none;
 }
 
@@ -49,6 +49,7 @@ $navbar-default-bg: black;
 
 .description {
   margin-top: 0;
+  color: black;
 }
 
 .article-title {
@@ -60,6 +61,7 @@ $navbar-default-bg: black;
   border-top: 1px solid #eaeaea;
   padding-top: 15px;
   padding-bottom: 15px;
+  color: black;
 }
 
 .article-meta-details {
@@ -76,11 +78,18 @@ footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
-  color: #777;
+  color: white;
+  vertical-align: middle;
+ // position: absolute;
+  //width: 60%;
+  bottom: 25px;
+ // left: 50%;
+ // margin-right: -50%;
+ // transform: translate(-50%, -50%)
 }
 
 footer a:hover {
-  color: #222;
+  color: white;
 }
 
 footer small {
@@ -90,9 +99,11 @@ footer small {
 footer ul {
   float : right;
   list-style: none;
+  color: white;
 }
 
 footer ul li{
   float : left;
   margin-left: 15px;
+  color: white;
 }
