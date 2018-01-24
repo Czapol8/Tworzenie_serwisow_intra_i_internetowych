@@ -16,9 +16,7 @@ gem 'puma', '~> 3.7'
 gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-bootstrap4'
 # Plot libraries
-gem 'd3-rails'
 gem 'plotlyjs-rails'
-gem 'threejs-rails'
 # Hash mechanism for passwords
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git'
 # Bootstrap

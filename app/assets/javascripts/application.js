@@ -13,7 +13,7 @@
 //= require rails-ujs
 //= require jquery
 //= require jquery_ujs
-//= require d3
+//= require plotly
 //= require vis
 //= require bootstrap-sprockets
 //= require turbolinks
