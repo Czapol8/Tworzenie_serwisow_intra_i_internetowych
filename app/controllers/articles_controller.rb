@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:edit, :update, :show, :destroy]
+  before_action :set_article, only: [:edit, :update, :show, :destroy, :data]
   before_action :require_user, except: [:index, :show]
   before_action :require_same_user, only: [:edit, :update, :destroy]
   def index
@@ -38,6 +38,14 @@ class ArticlesController < ApplicationController
 
   end
 
+  def data
+    respond_to do |format|
+      format.json {
+        render :json => @article.chartFile.to_json
+      }
+    end
+  end
+
   def destroy
     @article.destroy
     flash[:danger] = "Article was deleted"
@@ -49,7 +57,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
   def article_params
-    params.require(:article).permit(:title, :description)
+    params.require(:article).permit(:title, :description, :chartFile)
   end
   def require_same_user
     if current_user != @article.user and !current_user.admin?

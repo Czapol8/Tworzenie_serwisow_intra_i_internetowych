@@ -14,6 +14,8 @@
       </div>
     </ul>
   <% end %>
+  <div align="center" id="visualization"></div>
+  <hr>
   <h4 class="center description"><strong>Description: </strong></h4>
   <hr>
     <%= simple_format(@article.description) %>
@@ -26,4 +28,93 @@
   </div>
 </div>
 
+<script>
+    $(document).on('turbolinks:load', function() {
+        $.ajax({
+            type: "GET",
+            contentType: "application/json; charset=utf-8",
+            url: "<%= get_data_path %>",
+            dataType: 'json',
+            success: function (data) {
+                
+                if(false)
+                    d3.csv(data.url, function(data) {
+                        visF(data);
+                    });
+                else
+                    Plotly.d3.csv(data.url, function(err, rows){
+                        plotlyF(rows);
+                    });
+            },
+            error: function (result) {
+                console.log(result);
+            }
+        });
+    });
 
+    function plotlyF(rows) {
+        function unpack(rows, key) {
+            return rows.map(function(row)
+            { return row[key]; });}
+
+        var trace1 = {
+            x:unpack(rows, 'x'), y: unpack(rows, 'y'), z: unpack(rows, 'value'),
+            mode: 'markers',
+            marker: {
+                size: 12,
+                symbol: 'circle',
+                line: {
+                    color: unpack(rows, 'value'),
+                    width: 2,
+                    colorscale: 'true'},
+                opacity: 0.8},
+            showlegend: 'false',
+            showscale: 'true',
+            type: 'scatter3d'
+        };
+
+        var data = [trace1];
+        var layout = {margin: {
+                l: 0,
+                r: 0,
+                b: 0,
+                t: 0
+            }};
+        var container = document.getElementById('visualization');
+        Plotly.newPlot(container, data, layout);
+    }
+
+
+
+
+
+    function visF(csv) {
+
+        var dataVis = new vis.DataSet();
+
+        var options = {
+            width:  '800px',
+            height: '800px',
+            style: 'surface',
+            showPerspective: true,
+            showGrid: true,
+            showShadow: false,
+            keepAspectRatio: true,
+            verticalRatio: 0.5
+        };
+        dataVis = convertCsvJsonToVisDataSet(csv);
+        // Instantiate our graph object.
+        var container = document.getElementById('visualization');
+        var graph3d = new vis.Graph3d(container, dataVis, options);
+    }
+
+    function convertCsvJsonToVisDataSet(csv) {
+        var data = new vis.DataSet();
+        for(var i=0; i<csv.length; i++) {
+            data.add({x:parseFloat(csv[i].x),
+                y:parseFloat(csv[i].y),
+                z:parseFloat(csv[i].value)});
+        }
+        return data;
+    }
+</script>
