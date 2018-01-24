@@ -27,17 +27,15 @@
     <%= link_to "View all articles", articles_path, class: "btn btn-xs btn-success" %>
   </div>
 </div>
-
 <script>
-    $(document).on('turbolinks:load', function() {
+    $(document).on("ready", function() { //.on('turbolinks:load'
         $.ajax({
             type: "GET",
             contentType: "application/json; charset=utf-8",
             url: "<%= get_data_path %>",
             dataType: 'json',
             success: function (data) {
-                
-                if(false)
+                if('<%= @article.lib %>' === 'vis')
                     d3.csv(data.url, function(data) {
                         visF(data);
                     });
@@ -84,17 +82,13 @@
         Plotly.newPlot(container, data, layout);
     }
 
-
-
-
-
     function visF(csv) {
 
         var dataVis = new vis.DataSet();
 
         var options = {
-            width:  '800px',
-            height: '800px',
+            width:  '600px',
+            height: '600px',
             style: 'surface',
             showPerspective: true,
             showGrid: true,
